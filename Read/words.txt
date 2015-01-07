@@ -1,0 +1,5 @@
+Date	Word	Meaning	Example
+2015-01-07	rejoice		Still, you may rejoice that it happens at all.
+2015-01-07	happens at all		Still, you may rejoice that it happens at all.
+2015-01-07	in other corners		Whether or not atoms make life in other corners of the universe, they make plenty else; indeed, they make everything else.
+2015-01-07	properties		There is no law that requires the universe to fill itself with small particles of matter or to produce light and gravity and the other physical properties on which our existence hinges.
