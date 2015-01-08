@@ -30,14 +30,13 @@ class Word():
             right = sentence.find(word_sep)
             word_list.append(sentence[:right].strip())    
             sentence = sentence[right+increment:]
-            print word_list
         return word_list
     def retrieve(self, content):
         f = open(self.dir, 'w')
         f.write('Date\tWord\tMeaning\tExample\n')
         global sentence_sep
         global word_sep
-        sentences = [foo.strip().replace(sentence_sep, '')+'.' for foo in content.split('.') if foo]
+        sentences = [foo.strip().replace(sentence_sep, '')+'.' for foo in re.split('\.|\!|\?|\n|\r', content) if foo]
         for sen in sentences:          
             #words = re.findall('%s(\S+)%s' % (word_sep, word_sep), sen)
             words = self.parse(sen)
@@ -55,7 +54,7 @@ class Sentence():
         f.write('Date\tSentence\tComments\n')
         global sentence_sep
         global word_sep
-        sentences = [foo.strip().replace(word_sep, '')+'.' for foo in content.split('.') if foo]
+        sentences = [foo.strip().replace(word_sep, '')+'.' for foo in re.split('\.|\!|\?|\n|\r', content) if foo]
         for sen in sentences:
             if sentence_sep in sen:
                 f.write('%s\t%s\t%s\n' % (str(date.today()), sen.replace(sentence_sep, ''), ''))
